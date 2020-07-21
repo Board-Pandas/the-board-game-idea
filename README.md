@@ -9,8 +9,6 @@ General mixed memoes/ideas:
 
 Players cannot share eachothers hand. Intentionally revealing cards in the hand destroys the revealed spell... though maybe this is irrelevant, since spells must be taken from a shared Known pool anyway?
 
-Default to mana the same count as number of players. This pool is shared each round. Turn order must shift to prevent this from being abused. Each full round the max mana pool increases by 1, and refills. 
-
 --------------------------------------------------
 Defitions: 
 
@@ -18,11 +16,20 @@ Game Leader: The player responsible for performing actions for NPCs after all pl
 
 Player Character: Starts with 16 hp. There are very few ways to replenish lost HP.
 
-Initial Draw: At the start of the game, before the Unknown deck is shuffled. After all players have determined their class and turn order, players may search the Unknown deck to pick up to 5 starting cards based on their class's Initial Draw rules.
+Base Deck: Contains all cards that will be played in the immediate game. When the game starts, this is shuffled and placed into position as the Unknown Words card pile. With no additional cards or house rules, this contains: 
+3 Copies of all Rank 1 Spells
+2 Copies of all Rank 2 Spells
+1 Copy of all Rank 3 Spells
+All Special Cards.
+All other played-agreed-upon cards.
 
-Full Round: When all players and NPCs have used up their turns. After the end of a full round, the player's shared mana maximum is increased by 1, and the current manage is refilled to the new maximum.
+Initial Draw: After all players have determined their class and turn order, players may search the Unknown Words deck to pick up to 5 starting cards based on their class's Initial Draw rules.
 
-Turn: Any character takes 3 actions. For NPCs this is almost always casting every spell they can afford if anything is nearby.
+Mulligan: After the Initial Draw, if you do not like your hand you may return all of the cards you drew to the bottom of the Unknown Words and draw one less than you had from the top of the Unknown Words. You may repeat this until you have only 1 card left. If you only have one card, you may not Mulligan. After all players have completed their Initial Draw and any desired Mulligans, mulligans will no longer be available for the rest of the game.
+
+Full Round: When all players and NPCs have used up their turns. After the end of a full round [Insert mechanic to allow power escalation here].
+
+Turn: Any character takes 3 actions. For NPCs this is almost always casting every spell they are holding or drawing more if they are not holding any. NPCs will try to draw 2 cards directly from Unknown Cards. If they attempt to do so and there are no Unknown Cards, they will draw from the leftmost Known Cards instead.
 
 Rank: The power level of a spell. Typically
 * Rank 1 - 1 damage
@@ -31,10 +38,10 @@ Rank: The power level of a spell. Typically
 
 Shield: Has an element but no (effectively 1) HP. A character with a shield cannot be damaged until the shields are removed.
 
-Action: 
+Action: An action costs 1 of the available actions for a player's turn (usually, 3 actions per turn).
 Any of: 
-* Gather Resources - Move (number of players) from Unknown Spells to Known Spells
-* Cast a Spell - Caster can use the spell on any adjacent targets, or self. Requires having enough mana available to cast. Mana cost is equivalent to the rank of the spell. (Class Abilities may break this rule.)
+* Research - Move (number of players) from Unknown Spells to Known Spells. If (number of players) is larger than the number of remaining Unknown Spells, take 1 damage for each attempt to draw from nothing.
+* Cast a Spell - Caster can use the spell on any adjacent targets, or self.
 * Teach a Spell - Target can give a spell to any other player. (Or NPC.) Has no range limit.
 * Learn a Spell - Learn any 2 spells from the Known spells. Move them to your hand. 
 * Movement - Navigate the map. Move the number of spaces equal to the rank of the card used. After using a spell to move, the spell goes to Unknown.
@@ -42,7 +49,7 @@ Any of:
 
 Does Not Include: 
 * Class Ability - These are usually automatic. When optional, they don't count as a separate action.
-* Signaling / Burning a Spell - Signaling / Burning a Learned spell removes it from your hand, shows it to all other players, then moves it to Unknown. You recover 1 missing HP.
+* Signaling / Burning a Spell - Signaling / Burning a Learned spell removes it from your hand, shows it to all other players, then moves it to the bottom of Unknown Words. You recover 1 missing HP.
 
 Adjacent: Any other cell neighboring a specific cell, including diagonals.
 
@@ -54,6 +61,8 @@ Learned Words: This is referring to any given player's hand of cards. There is n
 
 Spawn: Draw two cards for the new hostile npc. The colors make up its shields. Draw one more card. The rank determines HP (4, 8, 16)
 
+Converse / Reply: When a player character intends to use a spell, each allied player may use one of their Learned (held) cards to Compliment the other player's spell. Complimenting a spell adds the stats to the existing spell. If the rank is higher than the base spell, the elements are combined. Spells used to compliment are discarded back to Unknown Words.
+
 --------------------------------------------------
 Default Map: 
 8x8 grid
@@ -61,30 +70,32 @@ Default Map:
 Objectives: 
 
 idk, highest number of last-hits to opponents after defeating all enemies? Everyone loses if nobody survives to the end.
+Alternatively, just see how survives the longest as enemies become increasingly overpowered?
+Alternatively, the first player to defeat 10 enemies becomes a Crystal Devourer with (Number of Players * 20 )HP. If they defeat all other enemies and players, they win. If a player defeats the Crystal Dragon, they replace it with a -5 penalty to Max HP.
 
 Other players can be last-hit too and it still counts for points. But it kinda makes you an awful person. Maybe best left to a optional house-rule.
 --------------------------------------------------
 Character Classes, Starting Cards:
 
 Defender - 
-+ You may spend 1 mana to learn any Known rank-1 spell. This does not cost an action. Casting rank 1 spells also do not cost an action. (You may draw resources 3 times for all actions, learn as many spells as you have mana to afford, and cast with everything left)
-
-+ During the Initial Draw, you may take any Fire cards or any Rank 1 spell.
++ You may Learn and Cast any Rank 1 card for free. This does not cost an action. (You may draw resources 3 times for all actions, learn every Rank 1 Known, and cast them all)
++ You may only use the Move action once per turn.
++ During the Initial Draw, you draw only 1 card.
 
 Instructor - 
 + Whenever you would move a rank 2 spell from your hand to Unknown Spells, it instead goes to Known Spells. You cannot use rank 3 spells.
-
-+ During the Initial Draw, you may take any Earth cards, or rank 2 cards.
++ Every turn, you may perform one free Research without using an action.
++ During the Initial Draw, continue drawing until you have 3 rank 2 spells, or 10 spells total.
 
 Singer - 
 + Your rank 3 spells can remove any one shield from an adjacent target, regardless of element. You unlearn (move to Unknown) all Rank 1 spells from your hand when you turn ends.
-
-+ During the Initial Draw, you may take any Wind cards, or rank 3 cards.
++ Your spells have infinite range in a straight line North, East, South, or West of your position.
++ During the Initial Draw, continue drawing until you have 2 rank 3 cards, or 10 spells total.
 
 Dancer - 
-+ Rhythmic Flow - After casting a spell, all other copies of it (same rank and element) that you have Learned are cast as well for 1 mana each- regardless of rank- until out of duplicates or out of mana. (All casts affect the original target.)
-
-+ During the Initial Draw, you take each Water card you encounter until your hand is full. You do not get to choose which ones.
++ Rhythmic Flow - Whenever you cast a spell, you cast every spell you have Learned of the same Element. (All casts affect the original target.)
++ Any spell you use for movement allows you to move 5 spaces. You recover 1HP any time you use the Move action.
++ During the Initial Draw, draw 5 cards. Then, for every Water element card in-hand, draw an additional card. Finally, draw until your first non-water card.
 --------------------------------------------------
 Special Cards
 * Awaken: When drawn, spawn a player-hostile NPC in any adjacent free cell to the character that drew it. If all adjacent spaces are filled, restore all HP to the character that drew this card. Immediately move this card to the Unknown.
@@ -101,7 +112,11 @@ After this is done, return the three cards to Unknown and reshuffle.
 
 * Imitate: On Player draw: You cast your strongest spell on yourself. This does not activate class traits. On Enemy draw: Re-cast the last spell anyone cast onto the nearest player. If no spells had been played prior, this does nothing.
 
-* Annihilate: On player draw: All cards in your hand are discarded to Untapped Spells. All car
+* Annihilate: On player draw: All cards in your hand are discarded to Untapped Spells. All cards discarded are cast on the player in order from left most to right. Any spell that would kill the player is discarded without effect. On NPC Draw: Draw 3 more cards from Unknown. Discard all held cards. Gain a shield of the same type as each spell discarded, if that shield is not already applied. Then, task all of those spells on the nearest target (even if allied) and discard all spells.
+
+* Tome: If there are less than 5 Known cards, move from Unknown to Known until there are at least 5 Known cards. Then move the 5 oldest to hand. If drawn by NPC: Also recover HP based on each card's rank
+
+* Blasphemy: Kept in hand like a normal spell. When used, move all cards from Known to Unknown and recover 1hp for each card moved. then this card is discarded to Unknown Cards.
 
 --------------------------------------------------
 Card Elements
@@ -147,49 +162,3 @@ Misc
 
 * ... Which might be a cool play? If you can sacrifice a weak Red spell to signal to your partners that you might have a really good red to use if they save you enough Mana. (d)
 
---
-
-Cards with limited randomness is like the player predetermining the deck.
-A map most certainly could be like branching ways in games. Beat boss a or boss b?
-Crystals could be the mana, dragons the caster and language was just a proposal.
---
-CH
-The Dragon Warrior
-[3:47 PM]
-The Dragon Wizard(edited)
-[3:47 PM]
-The Dragon Dancer
-
-1
-
-1
-[3:48 PM]
-The Dragon Acrobat
-
-FP
-Warrior, Wizard, Mage, Dancer
---
-
-Well
-[9:00 PM]
-let's say there is a board map
-[9:00 PM]
-And there is two types of units
-[9:00 PM]
-character units, and the Crystal spells
-[9:01 PM]
-When fighting a Crystal, that crystal would pull a card that would represent it's stats
-[9:01 PM]
-hp and whatever
-[9:02 PM]
-on one side, it has varius numbers with shields (let's say 6 for example)
-[9:02 PM]
-you roll a dice, and the number you get, it's the armor it has
-[9:02 PM]
-so you have to use spell cards that have the same type of armor to hit it
----
-
-... Which might be a cool play? If you can sacrifice a weak Red spell to signal to your partners that you might have a really good red to use if they save you enough Mana.
---
-
-Chaincasting?
